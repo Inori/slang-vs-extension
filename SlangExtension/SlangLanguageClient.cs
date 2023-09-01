@@ -1,13 +1,13 @@
 ﻿using Microsoft.VisualStudio.LanguageServer.Client;
 using Microsoft.VisualStudio.Threading;
 using Microsoft.VisualStudio.Utilities;
+using StreamJsonRpc;
 using System;
 using System.IO;
 using System.Linq;
 using System.ComponentModel.Composition;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,11 +17,16 @@ using Microsoft.VisualStudio.Shell;
 
 namespace SlangExtension
 {
-    [ContentType("slang")]
-    [Export(typeof(ILanguageClient))]
     public class SlangLanguageClient : ILanguageClient
     {
         public string Name => "Slang Language Extension";
+        public object InitializationOptions => null;
+        public bool ShowNotificationOnInitializeFailed => true;
+
+        public event AsyncEventHandler<EventArgs> StartAsync;
+        public event AsyncEventHandler<EventArgs> StopAsync;
+
+        private const string SLANGD_EXECUTABLE_NAME = "slangd.exe";
 
         public IEnumerable<string> ConfigurationSections
         {
@@ -31,15 +36,19 @@ namespace SlangExtension
             }
         }
 
-        public object InitializationOptions => null;
-
         public IEnumerable<string> FilesToWatch => null;
-        public bool ShowNotificationOnInitializeFailed => true;
+        
+        internal static SlangLanguageClient Instance
+        {
+            get;
+            set;
+        }
+     
 
-        public event AsyncEventHandler<EventArgs> StartAsync;
-        public event AsyncEventHandler<EventArgs> StopAsync;
-
-        private string SLANGD_EXECUTABLE_NAME => "slangd.exe";
+        public SlangLanguageClient()
+        {
+            
+        }
 
         private string GetSlangDPath()
         {
@@ -85,7 +94,10 @@ namespace SlangExtension
 
         public async Task OnLoadedAsync()
         {
-            await StartAsync.InvokeAsync(this, EventArgs.Empty);
+            if (StartAsync != null)
+            {
+                await StartAsync.InvokeAsync(this, EventArgs.Empty);
+            }
         }
 
         public Task OnServerInitializedAsync()
@@ -106,5 +118,6 @@ namespace SlangExtension
 
             return Task.FromResult(failureContext);
         }
+
     }
 }

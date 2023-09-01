@@ -49,6 +49,7 @@
     <Compile Include="SlangContentTypeDefinition.cs" />
     <Compile Include="SlangExtensionPackage.cs" />
     <Compile Include="SlangLanguageClient.cs" />
+    <Compile Include="SlangCustomLanguageClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\icon.png">
