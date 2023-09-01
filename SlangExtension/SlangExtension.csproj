@@ -51,6 +51,10 @@
     <Compile Include="SlangLanguageClient.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\icon.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SlangExtensionSettings.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>

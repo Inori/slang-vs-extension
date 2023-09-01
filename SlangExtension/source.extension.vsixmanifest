@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="SlangExtension.e3bfa775-fcd8-4386-b657-896c29131753" Version="1.0" Language="en-US" Publisher="Asuka" />
+        <Identity Id="SlangExtension.e3bfa775-fcd8-4386-b657-896c29131753" Version="0.1" Language="en-US" Publisher="Asuka" />
         <DisplayName>SlangExtension</DisplayName>
-        <Description>Empty VSIX Project.</Description>
+        <Description xml:space="preserve">The Slang Shading Language Visual Studio Extension</Description>
+        <MoreInfo>https://github.com/Inori/slang-vs-extension</MoreInfo>
+        <ReleaseNotes>An initial preview release, bugs included :)</ReleaseNotes>
+        <Icon>Resources\icon.png</Icon>
+        <Tags>slang, hlsl, shader</Tags>
+        <Preview>true</Preview>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
