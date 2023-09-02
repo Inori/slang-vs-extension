@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="SlangExtension.e3bfa775-fcd8-4386-b657-896c29131753" Version="0.1" Language="en-US" Publisher="Asuka" />
+        <Identity Id="SlangExtension.e3bfa775-fcd8-4386-b657-896c29131753" Version="0.1.2" Language="en-US" Publisher="Asuka" />
         <DisplayName>SlangExtension</DisplayName>
         <Description xml:space="preserve">The Slang Shading Language Visual Studio Extension</Description>
         <MoreInfo>https://github.com/Inori/slang-vs-extension</MoreInfo>

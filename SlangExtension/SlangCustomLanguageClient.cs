@@ -47,14 +47,17 @@ namespace SlangExtension
 
             public async Task<JToken> HandleRequestAsync(string methodName, JToken methodParam, Func<JToken, Task<JToken>> sendRequest)
             {
+#if DEBUG
                 Debug.WriteLine("Request: " + methodName + "->" + methodParam.ToString());
-
+#endif
                 return await sendRequest(methodParam);
             }
 
             public async Task HandleNotificationAsync(string methodName, JToken methodParam, Func<JToken, Task> sendNotification)
             {
+#if DEBUG
                 Debug.WriteLine("Notification: " + methodName + "->" + methodParam.ToString());
+#endif
 
                 await sendNotification(methodParam);
             }

@@ -1,2 +1,5 @@
-﻿[$RootKey$\OpenFolder\Settings\VSWorkspaceSettings\SlangLanguageExtension]
+﻿[$RootKey$\TextMate\Repositories]
+"slang"="$PackageFolder$\Grammars"
+
+[$RootKey$\OpenFolder\Settings\VSWorkspaceSettings\SlangLanguageExtension]
 @="$PackageFolder$\SlangLanguageExtensionSettings.json"
